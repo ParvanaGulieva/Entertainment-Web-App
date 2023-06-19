@@ -1,0 +1,96 @@
+.trending {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.headerL {
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: -0.5px;
+  color: var(--color-white);
+  margin-bottom: 24px;
+}
+
+.trendingGrid {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.scrollContainer {
+  display: flex;
+}
+
+.scrollContainer::-webkit-scrollbar {
+  width: 0;
+}
+
+.trendingItem {
+  margin-right: 40px;
+  height: 230px;
+  position: relative;
+  width: 470px;
+  top: 0;
+}
+.trendingDetailsThumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.0001) 39.57%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.trendingDetails {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  z-index: 100;
+}
+
+.details {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  z-index: 125;
+}
+
+@media screen and (max-width: 1024px) {
+  .trending {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .trending {
+    margin: 0 16px;
+  }
+
+  .headerL {
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: -0.3125px;
+  }
+
+  .trendingGrid {
+    column-gap: 16px;
+  }
+
+  .trendingItem {
+    height: 140px;
+    width: 240px;
+    margin-right: 16px;
+  }
+
+  .trendingDetails {
+    bottom: 16px;
+    left: 16px;
+  }
+}

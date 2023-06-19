@@ -1,0 +1,153 @@
+section {
+  margin: 32px 36px 32px;
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  grid-template-rows: 64px min-content 1fr;
+  column-gap: 36px;
+  row-gap: 40px;
+}
+
+.headerL {
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: -0.5px;
+  color: var(--color-white);
+  margin-bottom: 24px;
+}
+
+.headerLsearch {
+  margin-bottom: 0;
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: -0.5px;
+  color: var(--color-white);
+}
+
+.recommended {
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+
+.navbar {
+  grid-row: 1/4;
+}
+
+.search {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.homeTrending {
+  overflow-x: auto;
+  margin-right: -36px;
+}
+
+.trendingSection {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.homeTrending::-webkit-scrollbar {
+  display: none;
+}
+
+.trendingSection::-webkit-scrollbar {
+  display: none;
+}
+
+.movieGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px 40px;
+}
+
+.movieItem {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 8px;
+}
+
+.movieImg {
+  height: 174px;
+  width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  section {
+    margin: 24px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto 1fr;
+  }
+  .recommended {
+    grid-column: 1/2;
+    grid-row: 4/5;
+  }
+
+  .navbar {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  .search {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .homeTrending {
+    margin-right: -24px;
+  }
+
+  .movieImg {
+    height: 140px;
+    width: 100%;
+  }
+
+  .movieGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px 30px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  section {
+    margin: 0;
+    row-gap: 24px;
+  }
+
+  .recommended {
+    margin: 0 16px;
+  }
+
+  .headerL {
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: -0.3125px;
+  }
+
+  .search {
+    margin: 0 16px;
+  }
+
+  .homeTrending {
+    margin: 0 0 0 16px;
+  }
+
+  .movieGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .movieImg {
+    height: 110px;
+    width: 100%;
+  }
+
+  .headerLsearch {
+    margin: 0 16px;
+  }
+}

@@ -1,0 +1,175 @@
+.navbar {
+  padding: 36px 32px;
+  background-color: var(--color-navbar-bg);
+  width: 96px;
+  height: calc(100vh - 64px);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo {
+  margin-bottom: -80px;
+}
+
+.navItems {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.navItems li {
+  list-style-type: none;
+  opacity: 1;
+}
+
+a svg path {
+  transition: fill 0.3s ease;
+}
+
+a:hover svg path {
+  fill: var(--color-red);
+}
+
+.avatar {
+  width: 40px;
+  border: 1px solid var(--color-white);
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.active svg path {
+  fill: var(--color-white);
+}
+
+.headingXS {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 19px;
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+.logout {
+  position: relative;
+  background-color: var(--color-red);
+  width: 110px;
+  height: 40px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 100px;
+  animation: fade-in 0.3s ease forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slideIn {
+  animation: slide-in 0.3s ease forwards;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.triangleDown {
+  display: block;
+  height: 20px;
+  width: 20px;
+  background: inherit;
+  border: inherit;
+  position: absolute;
+  left: calc(50% - 10px);
+  bottom: -6px;
+  clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+  transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar {
+    flex-direction: row;
+    width: 100%;
+    height: 72px;
+    padding: 24px;
+  }
+
+  .logo {
+    margin: 0;
+  }
+
+  .navItems {
+    flex-direction: row;
+    gap: 32px;
+  }
+
+  .logout {
+    bottom: 0;
+    right: 12px;
+    top: 80px;
+  }
+
+  .triangleDown {
+    bottom: 0;
+    top: -6px;
+    left: 68px;
+    transform: rotate(135deg);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar {
+    width: 100%;
+    border-radius: 0;
+    padding: 16px;
+  }
+
+  .navItems {
+    gap: 24px;
+  }
+  .navItems li img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .avatar {
+    width: 28px;
+  }
+  .logo {
+    width: 24px;
+  }
+
+  .headingXS {
+    font-size: 13px;
+  }
+
+  .logout {
+    width: 100px;
+    height: 36px;
+    top: 70px;
+  }
+
+  .triangleDown {
+    top: -5px;
+    left: 70px;
+  }
+}

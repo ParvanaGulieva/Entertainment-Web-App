@@ -1,0 +1,60 @@
+.inputGroup {
+  border-bottom: 1px solid var(--color-icon);
+  padding: 0 16px 18px 16px;
+  width: 336px;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 12px;
+}
+
+input {
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 19px;
+  color: var(--color-white);
+  mix-blend-mode: normal;
+  opacity: 0.5;
+  background-color: transparent;
+  border: none;
+  outline: 0;
+  font-family: "Outfit", sans-serif;
+  caret-color: var(--color-red);
+}
+
+input:valid {
+  opacity: 1;
+}
+
+input:focus {
+  opacity: 1;
+}
+
+.inputGroup:has(> input:focus) {
+  border-bottom: 1px solid var(--color-white);
+}
+
+.invalid {
+  border-bottom: 1px solid var(--color-red);
+}
+
+.message {
+  font-weight: 200;
+  text-align: left;
+  font-size: 13px;
+  line-height: 16px;
+  color: var(--color-red);
+  text-transform: capitalize;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #fff !important;
+}

@@ -1,0 +1,99 @@
+.headerL {
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: -0.5px;
+  color: var(--color-white);
+  margin-bottom: 24px;
+}
+
+.navbar {
+  grid-row: 1/4;
+}
+
+.search {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.movieGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px 40px;
+}
+
+.movieItem {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 8px;
+}
+
+.movieImg {
+  height: 174px;
+  width: 100%;
+}
+
+.bookmarkCategory {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media screen and (max-width: 1024px) {
+  section {
+    margin: 24px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+    row-gap: 32px;
+  }
+
+  .movieGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px 30px;
+  }
+
+  .navbar {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  .search {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .movieImg {
+    height: 140px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  section {
+    margin: 0;
+    row-gap: 24px;
+  }
+
+  .search {
+    margin: 0 16px;
+  }
+
+  .headerL {
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: -0.3125px;
+  }
+
+  .movieGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .movieImg {
+    height: 110px;
+  }
+
+  .recommended {
+    margin: 0 16px;
+  }
+}
