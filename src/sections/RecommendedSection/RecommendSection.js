@@ -10,27 +10,26 @@ let link = base_url + "/trending/all/day?language=en-US" + API_key;
 const RecommendSection = ({ movieData, setMovieData }) => {
   const [loading, setLoading] = useState(true);
 
-  const fetchAPI = async () => {
-    setLoading(true);
-    try {
-      const res = await fetch(link);
-      const data = await res.json();
-      if (data) {
-        setMovieData(data.results);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-    setLoading(false);
-  };
-
   useEffect(() => {
+    const fetchAPI = async () => {
+      setLoading(true);
+      try {
+        const res = await fetch(link);
+        const data = await res.json();
+        if (data) {
+          setMovieData(data.results);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+      setLoading(false);
+    };
     fetchAPI();
-  }, []);
+  }, [setMovieData]);
 
   return (
     <div className={styles.movieGrid}>
-      {movieData.length === 0 ? (
+      {movieData.length === 0 && loading ? (
         <p className={styles.headerL}>Loading...</p>
       ) : (
         movieData.map((res, pos) => {

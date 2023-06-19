@@ -4,6 +4,8 @@ import styles from "./Navbar.module.css";
 import logo from "../../assets/logo.svg";
 import avatar from "../../assets/image-avatar.png";
 import { UserAuth } from "../../context/AuthContext";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Navbar = () => {
   const [showLogout, setShowLogout] = useState(false);
@@ -21,8 +23,9 @@ const Navbar = () => {
     try {
       await logOut();
       navigate("/login");
+      toast.success("Log out successful!");
     } catch (e) {
-      console.log(e.message);
+      toast.error("Log out failed. Please try again.");
     }
   };
 

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import styles from "../Movies/Movies.module.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Search from "../../components/Search/Search";

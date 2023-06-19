@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./MovieDetails.module.css";
 import iconMovie from "../../assets/icon-category-movie.svg";
 import iconTV from "../../assets/icon-category-tv.svg";
-import logo from "../../assets/favicon-32x32.png";
 
 const MovieDetails = (movie) => {
   const dateString = movie.info.release_date || movie.info.first_air_date;

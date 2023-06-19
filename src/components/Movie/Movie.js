@@ -29,7 +29,7 @@ const Movie = ({ info }) => {
       <img
         className={styles.movie}
         src={img_path + info.poster_path}
-        alt="movie image"
+        alt="movie"
       />
       <div
         className={styles.bookmark}

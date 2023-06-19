@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import styles from "./Login.module.css";
@@ -8,7 +8,7 @@ import logo from "../../assets/logo.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../../context/AuthContext";
 import { loginSchema } from "../../Validation/UserValidation";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
@@ -21,7 +21,6 @@ const Login = () => {
     resolver: yupResolver(loginSchema),
   });
 
-  const [error, setError] = useState("");
   const { signIn } = UserAuth();
   const navigate = useNavigate();
 
@@ -35,7 +34,6 @@ const Login = () => {
       navigate("/");
       toast.success("Login successful!");
     } catch (e) {
-      setError(e.message);
       toast.error("Login failed. Please try again.");
     }
   };

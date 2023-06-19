@@ -11,19 +11,23 @@ const TrendingSection = ({ movieData, setMovieData }) => {
   const [loading, setLoading] = useState(true);
   const [randomMovieData, setRandomMovieData] = useState([]);
 
-  const fetchAPI = async () => {
-    setLoading(true);
-    try {
-      const res = await fetch(link);
-      const data = await res.json();
-      if (data) {
-        setMovieData(data.results);
+  useEffect(() => {
+    const fetchAPI = async () => {
+      setLoading(true);
+      try {
+        const res = await fetch(link);
+        const data = await res.json();
+        if (data) {
+          setMovieData(data.results);
+        }
+      } catch (error) {
+        console.log(error);
       }
-    } catch (error) {
-      console.log(error);
-    }
-    setLoading(false);
-  };
+      setLoading(false);
+    };
+
+    fetchAPI();
+  }, [setMovieData]);
 
   useEffect(() => {
     if (movieData.length > 0) {
@@ -35,7 +39,7 @@ const TrendingSection = ({ movieData, setMovieData }) => {
   return (
     <>
       <div className={styles.trendingGrid}>
-        {movieData.length === 0 ? (
+        {movieData.length === 0 && loading ? (
           <p className={styles.headerL}>Loading...</p>
         ) : (
           <div className={styles.scrollContainer}>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import styles from "./Signup.module.css";
@@ -8,7 +8,7 @@ import logo from "../../assets/logo.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../../context/AuthContext";
 import { userSchema } from "../../Validation/UserValidation";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Signup = () => {
@@ -20,8 +20,6 @@ const Signup = () => {
   } = useForm({
     resolver: yupResolver(userSchema),
   });
-
-  const [error, setError] = useState("");
 
   const { createUser } = UserAuth();
   const navigate = useNavigate();
@@ -37,12 +35,9 @@ const Signup = () => {
       navigate("/login");
       toast.success("Account was successfuly created");
     } catch (e) {
-      setError(e.message);
       toast.error("Register failed. Please try again.");
     }
   };
-
-  // console.log(errors);
 
   return (
     <div className={styles.signupPage}>

@@ -75,7 +75,7 @@ const Movies = () => {
         )}
 
         <div className={styles.movieGrid}>
-          {movieData.length === 0 ? (
+          {movieData.length === 0 && loading ? (
             <p className={styles.headerL}>Loading...</p>
           ) : (
             dataSearch.map((res, pos) => {
